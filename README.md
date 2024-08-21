@@ -602,8 +602,8 @@ return (
   - [...folder] - Catch-all route segment
   - [[...folder]] Optional catch-all route segment (used by Clerk)
 
-- create test folder app/\_css
-- create app/(dashboard)/auth
+- create test folder app/\_css: if you go to that rout in the browser it will show 404
+- create app/(dashboard)/auth: because dashboard is in (), the route doesn't need to have 'dashboard' just /auth
 
   - the url is just '/auth'
 
@@ -617,8 +617,8 @@ const SignInPage = ({ params }: { params: { "sign-in": string } }) => {
 export default SignInPage;
 ```
 
-- create app/(dashboard)/auth/[...sign-in]
-- create app/(dashboard)/auth/[[...sign-in]]
+- create app/(dashboard)/auth/[...sign-in]: will not throw 404 and can log all the params
+- create app/(dashboard)/auth/[[...sign-in]]: if you remove the page.tsx in (dashboard), it will still work
 
 ```ts
 const SignInPage = ({ params }: { params: { "sign-in": string[] } }) => {
