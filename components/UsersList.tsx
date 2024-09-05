@@ -1,7 +1,8 @@
 import { fetchUsers } from "@/utils/actions";
+import React, { JSXElementConstructor } from "react";
 import DeleteButton from "./DeleteButton";
 
-const UsersList: React.FC<{}> = async () => {
+const UsersList = async () => {
   const users = await fetchUsers();
   return (
     <div className="mt-4">
